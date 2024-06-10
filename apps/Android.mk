@@ -15,22 +15,33 @@
 
 LOCAL_PATH := $(call my-dir)
 
+
 include $(CLEAR_VARS)
-LOCAL_MODULE := metro
+LOCAL_MODULE := accord
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_SRC_FILES := metro/metro.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_SRC_FILES := accord/accord.apk
 LOCAL_PRODUCT_MODULE := true
 LOCAL_OPTIONAL_USES_LIBRARIES := androidx.window.extensions androidx.window.sidecar
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := simpmusic
+LOCAL_MODULE := innertune
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_SRC_FILES := simpmusic/simpmusic.apk
+LOCAL_SRC_FILES := innertune/innertune.apk
+LOCAL_PRODUCT_MODULE := true
+LOCAL_OPTIONAL_USES_LIBRARIES := org.apache.http.legacy
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := breezyweather
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
+LOCAL_SRC_FILES := breezyweather/breezyweather.apk
 LOCAL_PRODUCT_MODULE := true
 LOCAL_OPTIONAL_USES_LIBRARIES := androidx.window.extensions androidx.window.sidecar
 include $(BUILD_PREBUILT)
@@ -52,4 +63,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_SRC_FILES := fdroid/F-Droid.apk
 LOCAL_PRODUCT_MODULE := true
+LOCAL_OPTIONAL_USES_LIBRARIES := \
+    androidx.window.extensions \
+    androidx.window.sidecar
 include $(BUILD_PREBUILT)
